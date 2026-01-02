@@ -8,6 +8,7 @@ import Cart from './components/Cart'
 import Toast from './components/Toast'
 import AdminLogin from './pages/AdminLogin'
 import AdminDashboard from './pages/AdminDashboard'
+import KeepAlive from './pages/KeepAlive'
 
 function App() {
   const [activeTab, setActiveTab] = useState('shop')
@@ -33,7 +34,7 @@ function App() {
       setCart([...cart, { ...product, quantity: 1 }])
     }
     
-    showToast('Item added to cart!')
+    showToast('Added to Cart!')
   }
 
   const updateQuantity = (index, change) => {
@@ -57,6 +58,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/keepalive" element={<KeepAlive />} />
         <Route path="/admin/login" element={<AdminLogin setIsAdmin={setIsAdmin} />} />
         <Route 
           path="/admin" 
